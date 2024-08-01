@@ -1,0 +1,57 @@
+En la carpeta frontend hay archivos docker: Dockerfile y docker-compose.yml. Al momento de contruir el contenedor para el frontend salia el siguiente error y por eso no se pudo levantar el servicio.
+
+
+
+ => ERROR [react-app 6/6] RUN npm run build                                                                                                                                                                     1.3s 
+------                                                                                                                                                                                                               
+ > [react-app 6/6] RUN npm run build:                                                                                                                                                                                
+0.475                                                                                                                                                                                                                
+0.475 > skote-react-hook@2.0.0 build                                                                                                                                                                                 
+0.475 > GENERATE_SOURCEMAP=false react-scripts --max_old_space_size=8000 build                                                                                                                                       
+0.475                                                                                                                                                                                                                
+1.259 node:internal/modules/cjs/loader:1031
+1.259   throw err;
+1.259   ^
+1.259 
+1.259 Error: Cannot find module 'ajv/dist/compile/codegen'
+1.259 Require stack:
+1.259 - /app/node_modules/ajv-keywords/dist/definitions/typeof.js
+1.259 - /app/node_modules/ajv-keywords/dist/keywords/typeof.js
+1.259 - /app/node_modules/ajv-keywords/dist/keywords/index.js
+1.259 - /app/node_modules/ajv-keywords/dist/index.js
+1.259 - /app/node_modules/schema-utils/dist/validate.js
+1.259 - /app/node_modules/schema-utils/dist/index.js
+1.259 - /app/node_modules/mini-css-extract-plugin/dist/index.js
+1.259 - /app/node_modules/react-scripts/config/webpack.config.js
+1.259 - /app/node_modules/react-scripts/scripts/build.js
+1.259     at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1028:15)
+1.259     at Function.Module._load (node:internal/modules/cjs/loader:873:27)
+1.259     at Module.require (node:internal/modules/cjs/loader:1100:19)
+1.259     at require (node:internal/modules/cjs/helpers:119:18)
+1.259     at Object.<anonymous> (/app/node_modules/ajv-keywords/dist/definitions/typeof.js:3:19)
+1.259     at Module._compile (node:internal/modules/cjs/loader:1198:14)
+1.259     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+1.259     at Module.load (node:internal/modules/cjs/loader:1076:32)
+1.259     at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+1.259     at Module.require (node:internal/modules/cjs/loader:1100:19) {
+1.259   code: 'MODULE_NOT_FOUND',
+1.259   requireStack: [
+1.259     '/app/node_modules/ajv-keywords/dist/definitions/typeof.js',
+1.259     '/app/node_modules/ajv-keywords/dist/keywords/typeof.js',
+1.259     '/app/node_modules/ajv-keywords/dist/keywords/index.js',
+1.259     '/app/node_modules/ajv-keywords/dist/index.js',
+1.259     '/app/node_modules/schema-utils/dist/validate.js',
+1.259     '/app/node_modules/schema-utils/dist/index.js',
+1.259     '/app/node_modules/mini-css-extract-plugin/dist/index.js',
+1.259     '/app/node_modules/react-scripts/config/webpack.config.js',
+1.259     '/app/node_modules/react-scripts/scripts/build.js'
+1.259   ]
+1.259 }
+------
+failed to solve: process "/bin/sh -c npm run build" did not complete successfully: exit code: 1
+
+
+
+
+-----------------------------------------
+La carpeta backend si esta realizada con las apis necesarias y documentacion en la ruta /swagger.

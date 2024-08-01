@@ -1,0 +1,4 @@
+flask
+pyjwt
+Flask-Swagger-UI
+Flask-JWT-Extended
